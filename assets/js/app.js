@@ -20,10 +20,14 @@
 
     $('.menu .expand-menu').on('click', function (evt) {
       $('.menu').toggleClass('expanded');
+
+      ga('send', 'event', 'Menu', 'Toggle');
     });
 
     $('.menu .links a').on('click', function (evt) {
       $('.menu').toggleClass('expanded');
+
+      ga('send', 'event', 'Navigation', $(evt.currentTarget).attr('href').split('#').join(''));
     });
   });
 })(jQuery);
